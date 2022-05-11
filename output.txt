@@ -1,0 +1,93 @@
+[33m[nodemon] 2.0.16[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node test.js`[39m
+{
+  method: 'select',
+  options: {},
+  timeout: false,
+  cancelOnTimeout: false,
+  bindings: [ 1 ],
+  __knexQueryUid: '7Lj3i4EC-G8rXJGYK25MR',
+  sql: 'select `players`.* from `players` where `id` = ?'
+}
+🚀 ~ prop RelationProperty {
+  _refs: [
+    ReferenceBuilder {
+      _expr: 'characters.id',
+      _parsedExpr: [Object],
+      _column: 'id',
+      _table: 'characters',
+      _cast: null,
+      _toJson: false,
+      _alias: null,
+      _modelClass: [Function]
+    }
+  ],
+  _modelClass: [class Character extends Model] {
+    relationMappings: { characters: [Object], superpower: [Object] }
+  },
+  _props: [ 'id' ],
+  _cols: [ 'id' ],
+  _propGetters: [ [Function (anonymous)] ],
+  _propSetters: [ [Function (anonymous)] ],
+  _patchers: [ [Function (anonymous)] ]
+}
+🚀 ~ prop RelationProperty {
+  _refs: [
+    ReferenceBuilder {
+      _expr: 'players.player_sn',
+      _parsedExpr: [Object],
+      _column: 'player_sn',
+      _table: 'players',
+      _cast: null,
+      _toJson: false,
+      _alias: null,
+      _modelClass: [Function]
+    }
+  ],
+  _modelClass: [class Player extends Model] {
+    relationMappings: { characters: [Object] }
+  },
+  _props: [ 'player_sn' ],
+  _cols: [ 'player_sn' ],
+  _propGetters: [ [Function (anonymous)] ],
+  _propSetters: [ [Function (anonymous)] ],
+  _patchers: [ [Function (anonymous)] ]
+}
+Error: expected id {"character_id":50} to have property characters.id
+    at checkProperties (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/utils/normalizeIds.js:126:15)
+    at normalizeIds (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/utils/normalizeIds.js:81:3)
+    at ManyToManyRelateOperation.onAdd (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/relations/manyToMany/relate/ManyToManyRelateOperation.js:10:16)
+    at QueryBuilder.callOperationMethod (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:372:33)
+    at QueryBuilder.addOperationUsingMethod (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:403:28)
+    at QueryBuilder.addOperation (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:394:22)
+    at /usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:766:12
+    at writeOperation (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:1313:5)
+    at QueryBuilder.relate (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:763:12)
+    at /usr/local/var/www/got-to-goal-nodejs-sql/test.js:5:71
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node test.js`[39m
+{
+  method: 'select',
+  options: {},
+  timeout: false,
+  cancelOnTimeout: false,
+  bindings: [ 1 ],
+  __knexQueryUid: 'lcTvwWENsyToIn8A0koHK',
+  sql: 'select `players`.* from `players` where `id` = ?'
+}
+🚀 ~ obj { character_id: 50 }
+🚀 ~ obj { player_sn: 1 }
+Error: expected id {"character_id":50} to have property characters.id
+    at checkProperties (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/utils/normalizeIds.js:126:15)
+    at normalizeIds (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/utils/normalizeIds.js:81:3)
+    at ManyToManyRelateOperation.onAdd (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/relations/manyToMany/relate/ManyToManyRelateOperation.js:10:16)
+    at QueryBuilder.callOperationMethod (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:372:33)
+    at QueryBuilder.addOperationUsingMethod (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:403:28)
+    at QueryBuilder.addOperation (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:394:22)
+    at /usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:766:12
+    at writeOperation (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:1313:5)
+    at QueryBuilder.relate (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:763:12)
+    at /usr/local/var/www/got-to-goal-nodejs-sql/test.js:5:71
