@@ -1,93 +1,543 @@
-[33m[nodemon] 2.0.16[39m
-[33m[nodemon] to restart at any time, enter `rs`[39m
-[33m[nodemon] watching path(s): *.*[39m
-[33m[nodemon] watching extensions: js,mjs,json[39m
-[32m[nodemon] starting `node test.js`[39m
-{
-  method: 'select',
-  options: {},
-  timeout: false,
-  cancelOnTimeout: false,
-  bindings: [ 1 ],
-  __knexQueryUid: '7Lj3i4EC-G8rXJGYK25MR',
-  sql: 'select `players`.* from `players` where `id` = ?'
-}
-🚀 ~ prop RelationProperty {
-  _refs: [
-    ReferenceBuilder {
-      _expr: 'characters.id',
-      _parsedExpr: [Object],
-      _column: 'id',
-      _table: 'characters',
-      _cast: null,
-      _toJson: false,
-      _alias: null,
-      _modelClass: [Function]
-    }
-  ],
-  _modelClass: [class Character extends Model] {
-    relationMappings: { characters: [Object], superpower: [Object] }
+
+
+  tutorial_step_passed = 5
+    ✔ api should return 200 code and tutorial_step_passed is updated
+
+
+  1 passing (265ms)
+
+<ref *2> Response {
+  _events: [Object: null prototype] {},
+  _eventsCount: 0,
+  _maxListeners: undefined,
+  res: <ref *1> IncomingMessage {
+    _readableState: ReadableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      buffer: BufferList { head: null, tail: null, length: 0 },
+      length: 0,
+      pipes: [],
+      flowing: true,
+      ended: true,
+      endEmitted: true,
+      reading: false,
+      sync: true,
+      needReadable: false,
+      emittedReadable: false,
+      readableListening: false,
+      resumeScheduled: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: false,
+      destroyed: false,
+      errored: null,
+      closed: false,
+      closeEmitted: false,
+      defaultEncoding: 'utf8',
+      awaitDrainWriters: null,
+      multiAwaitDrain: false,
+      readingMore: true,
+      decoder: [StringDecoder],
+      encoding: 'utf8',
+      [Symbol(kPaused)]: false
+    },
+    _events: [Object: null prototype] {
+      end: [Array],
+      data: [Array],
+      error: [Array],
+      close: [Function: bound emit]
+    },
+    _eventsCount: 4,
+    _maxListeners: undefined,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 172,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    headers: {
+      'x-powered-by': 'Express',
+      'content-type': 'application/json; charset=utf-8',
+      'content-length': '1077',
+      etag: 'W/"435-Fn5evsuHAF3zPfdrvOrWlqkoTn8"',
+      date: 'Mon, 23 May 2022 03:23:29 GMT',
+      connection: 'close'
+    },
+    rawHeaders: [
+      'X-Powered-By',
+      'Express',
+      'Content-Type',
+      'application/json; charset=utf-8',
+      'Content-Length',
+      '1077',
+      'ETag',
+      'W/"435-Fn5evsuHAF3zPfdrvOrWlqkoTn8"',
+      'Date',
+      'Mon, 23 May 2022 03:23:29 GMT',
+      'Connection',
+      'close'
+    ],
+    trailers: {},
+    rawTrailers: [],
+    aborted: false,
+    upgrade: false,
+    url: '',
+    method: null,
+    statusCode: 200,
+    statusMessage: 'OK',
+    client: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 172,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _consuming: false,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 10,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [Socket],
+      _header: 'PUT /api/homeTutorial/tutorials HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:50105\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBsYXllcjFAZ21haWwuY29tIiwiaWF0IjoxNjUzMjc2MjA5LCJleHAiOjE2NTM4ODEwMDl9.LU81-c9ay1S5UPYST0QmGrUCnFjLIZGPbsZ_cL6B7EI\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 10\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/homeTutorial/tutorials',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    text: '{"code":200,"message":"Success","data":{"player_name":"player1","characters":[{"character_name":"Orthur","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Power shot","superpower_description":"Increase shooting power by 10%.","superpower_class":"striker"}},{"character_name":"J-Tron","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Power jump shot","superpower_description":"Increase shooting power within a range of 0% to 25%.","superpower_class":"striker"}},{"character_name":"Bethany","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Swift Movement","superpower_description":"Weave through opponents for 3 seconds before unleashing a shot at 15% strength%.","superpower_class":"striker"}},{"character_name":"Ronan","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Blink over an opponent","superpower_description":"Blink x pixels. If player ends up in the same position as opponent, then player will move BEHIND opponent while giving up possession.","superpower_class":"striker"}}]}}',
+    [Symbol(kCapture)]: false,
+    [Symbol(RequestTimeout)]: undefined
   },
-  _props: [ 'id' ],
-  _cols: [ 'id' ],
-  _propGetters: [ [Function (anonymous)] ],
-  _propSetters: [ [Function (anonymous)] ],
-  _patchers: [ [Function (anonymous)] ]
-}
-🚀 ~ prop RelationProperty {
-  _refs: [
-    ReferenceBuilder {
-      _expr: 'players.player_sn',
-      _parsedExpr: [Object],
-      _column: 'player_sn',
-      _table: 'players',
-      _cast: null,
-      _toJson: false,
-      _alias: null,
-      _modelClass: [Function]
-    }
-  ],
-  _modelClass: [class Player extends Model] {
-    relationMappings: { characters: [Object] }
+  request: Test {
+    _events: [Object: null prototype] { end: [Function (anonymous)] },
+    _eventsCount: 1,
+    _maxListeners: undefined,
+    _agent: false,
+    _formData: null,
+    method: 'put',
+    url: 'http://127.0.0.1:50105/api/homeTutorial/tutorials',
+    _header: {
+      'user-agent': 'node-superagent/3.8.3',
+      authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBsYXllcjFAZ21haWwuY29tIiwiaWF0IjoxNjUzMjc2MjA5LCJleHAiOjE2NTM4ODEwMDl9.LU81-c9ay1S5UPYST0QmGrUCnFjLIZGPbsZ_cL6B7EI',
+      'content-type': 'application/json'
+    },
+    header: {
+      'User-Agent': 'node-superagent/3.8.3',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBsYXllcjFAZ21haWwuY29tIiwiaWF0IjoxNjUzMjc2MjA5LCJleHAiOjE2NTM4ODEwMDl9.LU81-c9ay1S5UPYST0QmGrUCnFjLIZGPbsZ_cL6B7EI',
+      'Content-Type': 'application/json'
+    },
+    writable: true,
+    _redirects: 0,
+    _maxRedirects: 5,
+    cookies: '',
+    qs: {},
+    _query: [],
+    qsRaw: [],
+    _redirectList: [],
+    _streamRequest: false,
+    app: Server {
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      _connections: 1,
+      _handle: null,
+      _usingWorkers: false,
+      _workers: [],
+      _unref: false,
+      allowHalfOpen: true,
+      pauseOnConnect: false,
+      httpAllowHalfOpen: false,
+      timeout: 0,
+      keepAliveTimeout: 5000,
+      maxHeadersCount: null,
+      headersTimeout: 60000,
+      requestTimeout: 0,
+      _connectionKey: '6::::0',
+      [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+      [Symbol(ServerResponse)]: [Function: ServerResponse],
+      [Symbol(kCapture)]: false,
+      [Symbol(async_id_symbol)]: 170
+    },
+    _okCallback: [Function (anonymous)],
+    _data: { step: 5 },
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 10,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [Socket],
+      _header: 'PUT /api/homeTutorial/tutorials HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:50105\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBsYXllcjFAZ21haWwuY29tIiwiaWF0IjoxNjUzMjc2MjA5LCJleHAiOjE2NTM4ODEwMDl9.LU81-c9ay1S5UPYST0QmGrUCnFjLIZGPbsZ_cL6B7EI\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 10\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/homeTutorial/tutorials',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    protocol: 'http:',
+    host: '127.0.0.1:50105',
+    _endCalled: true,
+    _callback: [AsyncFunction (anonymous)],
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      headers: [Object],
+      rawHeaders: [Array],
+      trailers: {},
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 200,
+      statusMessage: 'OK',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [ClientRequest],
+      text: '{"code":200,"message":"Success","data":{"player_name":"player1","characters":[{"character_name":"Orthur","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Power shot","superpower_description":"Increase shooting power by 10%.","superpower_class":"striker"}},{"character_name":"J-Tron","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Power jump shot","superpower_description":"Increase shooting power within a range of 0% to 25%.","superpower_class":"striker"}},{"character_name":"Bethany","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Swift Movement","superpower_description":"Weave through opponents for 3 seconds before unleashing a shot at 15% strength%.","superpower_class":"striker"}},{"character_name":"Ronan","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Blink over an opponent","superpower_description":"Blink x pixels. If player ends up in the same position as opponent, then player will move BEHIND opponent while giving up possession.","superpower_class":"striker"}}]}}',
+      [Symbol(kCapture)]: false,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    response: [Circular *2],
+    called: true,
+    [Symbol(kCapture)]: false
   },
-  _props: [ 'player_sn' ],
-  _cols: [ 'player_sn' ],
-  _propGetters: [ [Function (anonymous)] ],
-  _propSetters: [ [Function (anonymous)] ],
-  _patchers: [ [Function (anonymous)] ]
+  req: <ref *3> ClientRequest {
+    _events: [Object: null prototype] {
+      drain: [Function],
+      error: [Function],
+      prefinish: [Function: requestOnPrefinish]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: false,
+    _last: true,
+    chunkedEncoding: false,
+    shouldKeepAlive: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    _contentLength: 10,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [Circular *3],
+      [Symbol(async_id_symbol)]: 172,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _header: 'PUT /api/homeTutorial/tutorials HTTP/1.1\r\n' +
+      'Host: 127.0.0.1:50105\r\n' +
+      'Accept-Encoding: gzip, deflate\r\n' +
+      'User-Agent: node-superagent/3.8.3\r\n' +
+      'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBsYXllcjFAZ21haWwuY29tIiwiaWF0IjoxNjUzMjc2MjA5LCJleHAiOjE2NTM4ODEwMDl9.LU81-c9ay1S5UPYST0QmGrUCnFjLIZGPbsZ_cL6B7EI\r\n' +
+      'Content-Type: application/json\r\n' +
+      'Content-Length: 10\r\n' +
+      'Connection: close\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: noopPendingOutput],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object],
+      requests: {},
+      sockets: [Object],
+      freeSockets: {},
+      keepAliveMsecs: 1000,
+      keepAlive: false,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'fifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'PUT',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    path: '/api/homeTutorial/tutorials',
+    _ended: true,
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      headers: [Object],
+      rawHeaders: [Array],
+      trailers: {},
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 200,
+      statusMessage: 'OK',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *3],
+      text: '{"code":200,"message":"Success","data":{"player_name":"player1","characters":[{"character_name":"Orthur","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Power shot","superpower_description":"Increase shooting power by 10%.","superpower_class":"striker"}},{"character_name":"J-Tron","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Power jump shot","superpower_description":"Increase shooting power within a range of 0% to 25%.","superpower_class":"striker"}},{"character_name":"Bethany","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Swift Movement","superpower_description":"Weave through opponents for 3 seconds before unleashing a shot at 15% strength%.","superpower_class":"striker"}},{"character_name":"Ronan","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Blink over an opponent","superpower_description":"Blink x pixels. If player ends up in the same position as opponent, then player will move BEHIND opponent while giving up possession.","superpower_class":"striker"}}]}}',
+      [Symbol(kCapture)]: false,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: '127.0.0.1',
+    protocol: 'http:',
+    [Symbol(kCapture)]: false,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      host: [Array],
+      'accept-encoding': [Array],
+      'user-agent': [Array],
+      authorization: [Array],
+      'content-type': [Array],
+      'content-length': [Array]
+    }
+  },
+  text: '{"code":200,"message":"Success","data":{"player_name":"player1","characters":[{"character_name":"Orthur","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Power shot","superpower_description":"Increase shooting power by 10%.","superpower_class":"striker"}},{"character_name":"J-Tron","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Power jump shot","superpower_description":"Increase shooting power within a range of 0% to 25%.","superpower_class":"striker"}},{"character_name":"Bethany","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Swift Movement","superpower_description":"Weave through opponents for 3 seconds before unleashing a shot at 15% strength%.","superpower_class":"striker"}},{"character_name":"Ronan","is_favorite":null,"status":"unlocked","superpower":{"superpower_name":"Blink over an opponent","superpower_description":"Blink x pixels. If player ends up in the same position as opponent, then player will move BEHIND opponent while giving up possession.","superpower_class":"striker"}}]}}',
+  body: {
+    code: 200,
+    message: 'Success',
+    data: { player_name: 'player1', characters: [Array] }
+  },
+  files: undefined,
+  buffered: true,
+  headers: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '1077',
+    etag: 'W/"435-Fn5evsuHAF3zPfdrvOrWlqkoTn8"',
+    date: 'Mon, 23 May 2022 03:23:29 GMT',
+    connection: 'close'
+  },
+  header: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '1077',
+    etag: 'W/"435-Fn5evsuHAF3zPfdrvOrWlqkoTn8"',
+    date: 'Mon, 23 May 2022 03:23:29 GMT',
+    connection: 'close'
+  },
+  statusCode: 200,
+  status: 200,
+  statusType: 2,
+  info: false,
+  ok: true,
+  redirect: false,
+  clientError: false,
+  serverError: false,
+  error: false,
+  created: false,
+  accepted: false,
+  noContent: false,
+  badRequest: false,
+  unauthorized: false,
+  notAcceptable: false,
+  forbidden: false,
+  notFound: false,
+  unprocessableEntity: false,
+  type: 'application/json',
+  charset: 'utf-8',
+  links: {},
+  setEncoding: [Function: bound ],
+  redirects: [],
+  [Symbol(kCapture)]: false
 }
-Error: expected id {"character_id":50} to have property characters.id
-    at checkProperties (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/utils/normalizeIds.js:126:15)
-    at normalizeIds (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/utils/normalizeIds.js:81:3)
-    at ManyToManyRelateOperation.onAdd (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/relations/manyToMany/relate/ManyToManyRelateOperation.js:10:16)
-    at QueryBuilder.callOperationMethod (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:372:33)
-    at QueryBuilder.addOperationUsingMethod (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:403:28)
-    at QueryBuilder.addOperation (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:394:22)
-    at /usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:766:12
-    at writeOperation (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:1313:5)
-    at QueryBuilder.relate (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:763:12)
-    at /usr/local/var/www/got-to-goal-nodejs-sql/test.js:5:71
-[32m[nodemon] restarting due to changes...[39m
-[32m[nodemon] starting `node test.js`[39m
-{
-  method: 'select',
-  options: {},
-  timeout: false,
-  cancelOnTimeout: false,
-  bindings: [ 1 ],
-  __knexQueryUid: 'lcTvwWENsyToIn8A0koHK',
-  sql: 'select `players`.* from `players` where `id` = ?'
-}
-🚀 ~ obj { character_id: 50 }
-🚀 ~ obj { player_sn: 1 }
-Error: expected id {"character_id":50} to have property characters.id
-    at checkProperties (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/utils/normalizeIds.js:126:15)
-    at normalizeIds (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/utils/normalizeIds.js:81:3)
-    at ManyToManyRelateOperation.onAdd (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/relations/manyToMany/relate/ManyToManyRelateOperation.js:10:16)
-    at QueryBuilder.callOperationMethod (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:372:33)
-    at QueryBuilder.addOperationUsingMethod (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:403:28)
-    at QueryBuilder.addOperation (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilderOperationSupport.js:394:22)
-    at /usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:766:12
-    at writeOperation (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:1313:5)
-    at QueryBuilder.relate (/usr/local/var/www/got-to-goal-nodejs-sql/node_modules/objection/lib/queryBuilder/QueryBuilder.js:763:12)
-    at /usr/local/var/www/got-to-goal-nodejs-sql/test.js:5:71

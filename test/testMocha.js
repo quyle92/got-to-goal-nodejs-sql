@@ -16,13 +16,10 @@ describe('Chef test', function () {
     });
 
     it('make sure the chef can feed more.', function () {
-
         for (var i = 0; i < 6; i++) {
             chef.customersFed();
             assert.isAtLeast(chef.customers, 0);
         }
-
     });
 
 });
-

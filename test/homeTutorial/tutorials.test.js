@@ -40,27 +40,25 @@ describe('tutorial_step_passed < 5', () => {
             });
     });
 
-    describe('#/tutorials', () => {
-        it('api should return 200 code and tutorial_step_passed is updated', function (done) {
-            let data = {
-                step: 1
-            }
-            chai.request(app)
-                .put('/api/homeTutorial/tutorials')
-                // .set(`Authorization', 'Bearer ${token}`)
-                .auth(token, { type: 'bearer' }) //ref: chai-http.js
-                .send(data)
-                .end(async (err, res) => {
-                    res.should.have.status(200);
-                    let player = await Player.query().where('email', defaultUser.email).first();
+    it('api should return 200 code and tutorial_step_passed is updated', function (done) {
+        let data = {
+            step: 1
+        }
 
-                    assert.equal(1, player.tutorial_step_passed);
-                    done();
-                });
-
-        });
+        chai.request(app)
+            .put('/api/homeTutorial/tutorials')
+            // .set(`Authorization', 'Bearer ${token}`)
+            .auth(token, { type: 'bearer' }) //ref: chai-http.js
+            .send(data)
+            .then(async (res) => {
+                res.should.have.status(200);
+                let player = await Player.query().where('email', defaultUser.email).first();
+                assert.equal(1, player.tutorial_step_passed);
+                done()
+            }).catch(done);
 
     });
+
 });
 
 describe('tutorial_step_passed = 5', () => {
@@ -68,7 +66,7 @@ describe('tutorial_step_passed = 5', () => {
     before(async () => {
         await knex('characters_players').truncate();
         let player = await Player.query().findOne({ email: defaultUser.email });
-        updatedPlayer = await player.$query().updateAndFetch({ tutorial_step_passed: 4 });
+        await player.$query().update({ tutorial_step_passed: 4 });
     });
 
     before(done => {
@@ -82,7 +80,7 @@ describe('tutorial_step_passed = 5', () => {
             });
     });
 
-    it('api should return 200 code and tutorial_step_passed is updated', async function () {
+    it('api should return 200 code and tutorial_step_passed is updated', function (done) {
         let data = {
             step: 5
         }
@@ -100,13 +98,13 @@ describe('tutorial_step_passed = 5', () => {
                     // .set(`Authorization', 'Bearer ${token}`)
                     .auth(token, { type: 'bearer' }) //ref: chai-http.js
                     .send(data)
-                    .end(async (err, res) => {
+                    .then(async (res) => {
                         res.should.have.status(200);
                         let player = await Player.query().where('email', defaultUser.email).first();
                         assert.equal('unlocked', res.body.data.characters[res.body.data.characters.length - 1].status);
-                        assert.equal(1, player.tutorial_step_passed);
-                        // done();
-                    })
+                        assert.equal(5, player.tutorial_step_passed);
+                        done();
+                    }).catch(done);
             });
     });
 
